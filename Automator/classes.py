@@ -22,6 +22,11 @@ class VJudge:
         print('get data from Vjudge...')
         submissions = self.__get_contest_status()
 
+        if len(submissions) == 0:
+            print(
+                'can NOT get data from vjudge :(, please make sure you set correct contestId and cookies OR maybe there is no submission after the entered date and time')
+            return
+
         print('clean data...')
         submissions = list(filter(
             lambda sub: sub['time'] >= self.__data['dateAndTime'], submissions))
