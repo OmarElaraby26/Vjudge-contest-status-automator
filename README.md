@@ -1,17 +1,27 @@
+- [ Motivation ](#Motivation)
+- [ About ](#About)
+- [ Installation ](#Installation)
+- [ How to set config.json file ](#How_to_set_config.json_file)
+- [ About the generated file ](#About_the_generated_file)
+- [ Contribution ](#Contribution)
+
+<a name="Motivation"></a>
 ## Motivation
 
+<a name="About"></a>
 ## About
-This is a python script to get all accepted submissions after a given time and date of a given contest on vjudge.net and make those submissions shareable after some cleaning and sorting and then generate a file contains those shareable links as json format.
+This is a python script to get all accepted submissions after a given time and date of a given contest on vjudge.net and make those submissions shareable after some cleaning and sorting and then generate a text file contains those shareable links as json format.
 
+<a name="Installation"></a>
 ## Installation
 * Install python3
 * Download this repo
-* Set config.json file
-* Open the terminal where the repo's directory is the current working directory
-* run `index.py` file by the following command `python3 index.py`
+* Set `config.json` file
+* run `index.py` file
 * DONE :)
 
-## About config.json file
+<a name="How_to_set_config.json_file"></a>
+## How to set config.json file
 * You can get `contestId` from the url. for example if `https://vjudge.net/contest/123456` is the contest link then `123456` is the contestId
 * `dateAndTime`
   * If you want only submissions after specific date and time, set`dateAndTime` property. Otherwise leave it as empty string
@@ -23,16 +33,18 @@ This is a python script to get all accepted submissions after a given time and d
   * `Jax.Q` would be something like this `username|GO0BOBZXFGHQ3QYJKP54IVP18CVUMS`
 * If `generatedFileName` is not given, the generated file name will be in the following format `username_contestId_randomNumber.txt`
 
+<a name="About_the_generated_file"></a>
 ## About the generated file
-* All submissions grouped by problem number
-* All submissions of the same problem number group by language
-* All submissions of the same language sorted by submission time (newest first)
+* All submissions are grouped by the problem number.
+* All submissions of the same problem number are grouped by the language.
+* All submissions of the same language are sorted by submission time (newest first).
 
+<a name="Contribution"></a>
 ## Contribution
 Here is some ideas for contributing
 - The output file is json format, do you have a better format that you think it would be nicer ?
 
-- Instead of generating txt file, generate pdf. It would be nicer and shorter as you can make problem links as clickable hyperlink
+- Instead of generating txt file, generate a pdf. It would be nicer and shorter as you can make problem links as clickable hyperlink
 
 - Build error handlers as script assumes data is correct and everything goes as expected.
 
